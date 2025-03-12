@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MoneyFlow - Ваш финансовый помощник</title>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css">
+  
+</head>
+
+<body>
+
+    <div class="header">
+
+        <h1>MoneyFlow</h1>
+
+        <button class="theme-toggle" onclick="toggleTheme()">Темная тема</button>
+
+    </div>
+
+    <div class="tabs">
+
+        <button class="tab-button active" onclick="openTab(1)">Расходы</button>
+
+        <button class="tab-button" onclick="openTab(2)">Сложный %</button>
+
+        <button class="tab-button" onclick="openTab(3)">Инвестиции</button>
+
+        <button class="tab-button" onclick="openTab(4)">Сбережения</button>
+
+    </div>
+
+    <!-- Вкладка 1: Расходы -->
+
+    <div id="tab1" class="tab-content active">
+
+        <h2>Калькулятор расходов</h2>
+
+        <input type="number" id="food" placeholder="Еда">
+
+        <input type="number" id="transport" placeholder="Транспорт">
+
+        <input type="number" id="other" placeholder="Другое">
+
+        <div class="button-group">
+
+            <button class="calc-btn" onclick="drawExpensesChart()">Построить</button>
+
+            <button class="reset-btn" onclick="resetExpenses()">Обновить</button>
+
+        </div>
+
+        <canvas id="expensesChart"></canvas>
+
+        <div class="tips">
+
+            <h3>Советы:</h3>
+
+            <p>Следи за расходами с правилом 50/30/20. Премиум: экспорт в PDF!</p>
+
+        </div>
+
+        <div class="ad-banner">Реклама: Лучшие кредитные карты 2025 года!</div>
+
+    </div>
+
+    <!-- Вкладка 2: Сложный процент -->
+
+    <div id="tab2" class="tab-content">
+
+        <h2>Сложный процент</h2>
+
+        <input type="number" id="principal" placeholder="Начальная сумма">
+
+        <input type="number" id="rate" placeholder="Ставка (%)">
+
+        <input type="number" id="years" placeholder="Срок (лет)">
+
+        <input type="number" id="extra" placeholder="Доп. взнос (ежемесячно)">
+
+        <div class="button-group">
+
+            <button class="calc-btn" onclick="drawCompoundChart()">Рассчитать</button>
+
+            <button class="reset-btn" onclick="resetCompound()">Обновить</button>
+
+        </div>
+
+        <canvas id="compoundChart"></canvas>
+
+        <div class="tips">
+
+            <h3>Советы:</h3>
+
+            <p>Добавляй взносы для ускорения роста!</p>
+
+        </div>
+
+    </div>
+
+    <!-- Вкладка 3: Инвестиции -->
+
+    <div id="tab3" class="tab-content">
+
+        <h2>Инвестиции</h2>
+
+        <input type="number" id="initialInvest" placeholder="Начальный вклад">
+
+        <input type="number" id="investAmount" placeholder="Ежемесячный вклад">
+
+        <input type="number" id="investRate" placeholder="Доходность (%)">
+
+        <input type="number" id="investYears" placeholder="Срок (лет)">
+
+        <div class="button-group">
+
+            <button class="calc-btn" onclick="drawInvestmentChart()">Рассчитать</button>
+
+            <button class="reset-btn" onclick="resetInvestment()">Обновить</button>
+
+        </div>
+
+        <canvas id="investmentChart"></canvas>
+
+        <div class="tips">
+
+            <h3>Советы:</h3>
+
+            <p>Диверсифицируй риски с ETF!</p>
+
+        </div>
+
+    </div>
+
+    <!-- Вкладка 4: Сбережения -->
+
+    <div id="tab4" class="tab-content">
+
+        <h2>Сбережения</h2>
+
+        <input type="number" id="goal" placeholder="Цель (сумма)">
+
+        <input type="number" id="monthly" placeholder="Ежемесячный вклад">
+
+        <input type="number" id="savingsRate" placeholder="Ставка (%)">
+
+        <div class="button-group">
+
+            <button class="calc-btn" onclick="drawSavingsChart()">Рассчитать</button>
+
+            <button class="reset-btn" onclick="resetSavings()">Обновить</button>
+
+        </div>
+
+        <canvas id="savingsChart"></canvas>
+
+        <div class="tips">
+
+            <h3>Советы:</h3>
+
+            <p>Используй накопительные счета!</p>
+
+        </div>
+
+    </div>
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
