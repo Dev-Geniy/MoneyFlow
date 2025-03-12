@@ -1,0 +1,233 @@
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+
+            font-family: 'Roboto', sans-serif;
+
+            padding: 15px;
+
+            background: #f0f4f8;
+
+            color: #333;
+
+            transition: background 0.3s, color 0.3s;
+
+        }
+
+        body.dark {
+
+            background: #1e2a44;
+
+            color: #e0e0e0;
+
+        }
+
+        .header {
+
+            display: flex;
+
+            justify-content: space-between;
+
+            align-items: center;
+
+            margin-bottom: 15px;
+
+        }
+
+        .theme-toggle {
+
+            padding: 8px 15px;
+
+            border: none;
+
+            border-radius: 20px;
+
+            background: #007bff;
+
+            color: white;
+
+            cursor: pointer;
+
+        }
+
+        .tabs {
+
+            display: grid;
+
+            grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+
+            gap: 10px;
+
+            margin-bottom: 20px;
+
+        }
+
+        .tab-button {
+
+            padding: 12px;
+
+            border: none;
+
+            border-radius: 10px;
+
+            background: #d9e1e8;
+
+            cursor: pointer;
+
+            font-weight: 700;
+
+            transition: all 0.3s;
+
+        }
+
+        .dark .tab-button { background: #3b4a6b; color: #e0e0e0; }
+
+        .tab-button:hover { background: #b0b8c4; }
+
+        .dark .tab-button:hover { background: #4a5e8c; }
+
+        .tab-button.active {
+
+            background: linear-gradient(135deg, #007bff, #0056b3);
+
+            color: white;
+
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .tab-content {
+
+            display: none;
+
+            padding: 20px;
+
+            border-radius: 12px;
+
+            background: white;
+
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .dark .tab-content { background: #2b3a5c; }
+
+        .tab-content.active { display: block; }
+
+        canvas { max-width: 100%; height: auto; margin: 20px 0; }
+
+        input {
+
+            width: 100%;
+
+            margin: 8px 0;
+
+            padding: 12px;
+
+            border-radius: 8px;
+
+            border: 1px solid #ccc;
+
+            font-size: 16px;
+
+            background: #f9f9f9;
+
+        }
+
+        .dark input { background: #3b4a6b; border-color: #4a5e8c; color: #e0e0e0; }
+
+        .button-group {
+
+            display: flex;
+
+            gap: 10px;
+
+        }
+
+        button {
+
+            flex: 1;
+
+            padding: 12px;
+
+            border: none;
+
+            border-radius: 8px;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            transition: all 0.3s;
+
+        }
+
+        .calc-btn {
+
+            background: linear-gradient(135deg, #007bff, #0056b3);
+
+            color: white;
+
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+        }
+
+        .calc-btn:hover { background: linear-gradient(135deg, #0056b3, #003d82); }
+
+        .reset-btn {
+
+            background: linear-gradient(135deg, #ff6b6b, #e63946);
+
+            color: white;
+
+        }
+
+        .reset-btn:hover { background: linear-gradient(135deg, #e63946, #b32d38); }
+
+        .tips {
+
+            font-size: 14px;
+
+            padding: 15px;
+
+            border-radius: 8px;
+
+            background: rgba(255, 255, 255, 0.9);
+
+            margin-top: 20px;
+
+        }
+
+        .dark .tips { background: rgba(255, 255, 255, 0.1); }
+
+        .tips h3 { color: #007bff; margin: 10px 0 5px; }
+
+        .dark .tips h3 { color: #66b0ff; }
+
+        .ad-banner {
+
+            background: #f8d7da;
+
+            padding: 10px;
+
+            text-align: center;
+
+            margin: 15px 0;
+
+            border-radius: 6px;
+
+        }
+
+        .dark .ad-banner { background: #4a5e8c; }
+
+        @media (max-width: 600px) {
+
+            .tabs { grid-template-columns: 1fr 1fr; }
+
+            .button-group { flex-direction: column; gap: 8px; }
+
+            input, button { font-size: 14px; padding: 10px; }
+
+            .tips { font-size: 12px; }
+
+        }
